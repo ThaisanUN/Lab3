@@ -1,13 +1,15 @@
 body{
     background-image: url("../images/Background.jpg");
-    /* background: no-repeat; */
-    background-size: cover;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 .container{
     margin-top: 100px;
     background-color: rgba(245, 245, 220, 0.774);
-    height: 300px;
+    height: 500px;
 }
-#button{
+#botton{
     margin-top: 30px;
 }

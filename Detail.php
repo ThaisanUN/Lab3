@@ -1,4 +1,7 @@
 
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,34 @@
     <title>Detail</title>
 </head>
 <body>
-    
+<form action="" method="post" >
+<div><h1>Welcome , You have successfully logged in!</h1><br>
+Click to <input type="submit" name="logout" value="Logout" class="logout-button">.</div>
+<?php
+echo $_POST["logout"];
+?>
+</form>
+
+<?php
+$file =  fopen("Store.txt","r") or die("can't open!");
+$line = fgets($file);
+$array = explode(";",$line);
+$Email = trim($array[0]);
+$pwd = trim($array[1]);
+echo $Email.$pwd."<br>";
+fclose($file);
+if($_POST["logout"] == 1) {
+
+	$_SESSION["auth"] = "";
+
+	session_destroy();
+	header("Location:Login.php);
+}
+else {
+	# code...
+}
+
+
+?>
 </body>
 </html>

@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if(isset($_SESSION['auth'])&&$_SESSION['auth']){
-        header("Location:Detail.php");
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,20 +15,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <!-- <link rel="stylesheet" href="bootstrap/css/login.css"> -->
     <title>Login</title>
 </head>
+
 <body>
-    
     <div class="container" style="width:500px;">
-            <h1 class="login">Login</h1>
-        <form method="post" action="SaveLogin.php">
+        <form method="post" action="Login.php">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" >
+            <input type="email" name="email" class="form-control">
             <label for="pwd">Password</label>
-            <input type="password" name="pwd" class="form-control" >
-            <input type="submit" name="submit" value="Login" id="button" class="btn btn-primary">
-           
+            <input type="password" name="pwd" class="form-control">
+            <input type="submit" name="submit" value="Login" class="btn btn-primary">
+            <p>You Username Or Password Incorrect.</p>
         </form>
     </div>
 </body>
